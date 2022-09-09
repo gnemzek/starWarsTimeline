@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" type="image/ico" href="favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Star Wars Timeline</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="visually-hidden">Star Wars</h1>
+        <img src="star-wars-logo-2.png" alt="Star Wars Logo" class="sw-logo">
+        <p>in Timeline Order</p>
+    </div>
+    <div class="button-wrapper">
+        <button onClick="filterByNotConsumed()">Not Consumed</button>
+        <button onClick="filterByConsumed()">Consumed</button>
+        <button onClick="filterByComics()">Comics</button>
+        <button onClick="filterByMovie()">Movies</button>
+        <button onClick="filterByTV()">TV Shows</button>
+        <button onClick="filterByBook()">Books</button>
+        <button onClick="filterByAll()">All</button>
+    </div>
+
+   <form class="sort-by-form">
+        <input type="checkbox" id="not-consumed" name="not-consumed" value="Not Consumed">
+        <label for="not-consumed">Not Consumed</label>
+
+        <input type="checkbox" id="consumed" name="consumed" value="Consumed">
+        <label for="consumed">Consumed</label>
+
+        <input type="checkbox" id="comics" name="comics" value="comic">
+        <label for="comics">Comics</label>
+
+        <input type="checkbox" id="movies" name="movies" value="movie">
+        <label for="movies">Movies</label>
+
+        <input type="checkbox" id="tv-shows" name="tv-shows" value="tv">
+        <label for="tv-shows">TV Shows</label>
+
+        <input type="checkbox" id="books" name="books" value="book">
+        <label for="books">Books</label>
+
+        <input type="button" onClick="checkBoxFilter()" value="Filter">
+    </form> 
+
+    <div class="select-wrapper">
+      <form class="sort-by-form" id="select-form">
+        <select name="consumed" id="consumed-select">
+          <option value="true">Consumed</option>
+          <option value="false">Not Consumed</option>
+        </select>
+
+        <select name="type" id="type">
+          <option value="comic">Comics</option>
+          <option value="movie">Movies</option>
+          <option value="tv">TV Show</option>
+          <option value="book">Books</option>
+          <option value="All">All</option>
+        </select>
+
+        <input type="button" onClick="selectFilter()" value="Filter">
+      </form>
+    </div>
+
+    <div id="media-collection">
+      
+    </div>
+
+
+    <!-- SW Year Explaination Modal-->
+    <!-- Modal -->
+<div class="modal fade" id="sw-year" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h2>BBY v. ABY</h2>
+          <p>
+            BBY stands for "Before the <strong>Battle of Yavin</strong>," and ABY for "After the <strong>Battle of Yavin</strong>." Dates classed as 0 BBY and 0 ABY both denoted events that happened in the same year as the battle, either in the months before it, or the months after it.
+          </p>
+
+          <h3>Battle of Yavin</h3>
+          <p>
+            The Battle of Yavin, also known as the Battle of the Death Star, the assault on the Death Star, the attack on the Death Star, or the Miracle of Yavin, was a major and decisive battle of the Galactic Civil War, in which the Rebel Alliance was able to destroy the Death Star and was seen as one of the first major victories over the Galactic Empire.
+          </p>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="media_assembly.js"></script>
+    <script>
+        window.addEventListener('load', start());
+    </script>
+</body>
+
+</html>
